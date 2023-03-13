@@ -1,2 +1,13 @@
-<h1>Listings#index</h1>
+<h1>Listings Index</h1>
 <p>Find me in app/views/listings/index.html.erb</p>
+
+<% @listings.each do |listing| %>
+  <%= listing.listing_name %>
+  <%= listing.listing_address %>
+  <%= listing.listing_amenities %>
+  <%= listing.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>
+
+ <%= link_to "Create a new list", new_listing_path, class: "btn btn-outline-success"%>

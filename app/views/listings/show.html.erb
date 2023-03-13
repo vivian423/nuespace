@@ -1,2 +1,15 @@
 <h1>Listings#show</h1>
 <p>Find me in app/views/listings/show.html.erb</p>
+
+
+<div class="container">
+<h1><%= @listing.listing_name %></h1>
+</div>
+<div class="container">
+  <h4><%= @listing.listing_name %></h4>
+  <p>Location: <%= @listing.listing_address %></p>
+  <p>Available Amenities: <%= @listing.listing_amenities %></p>
+  <% @listing.photos.each do |photo| %>
+    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+</div>
