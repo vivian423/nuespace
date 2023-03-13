@@ -1,1 +1,34 @@
 // Specific CSS for your home-page
+
+.hero-container {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(250, 250, 255);
+  padding: 80px;
+  display: flex;
+}
+
+.search-container {
+  flex: 1;
+  height: 550px;
+  position: relative;
+}
+
+.form-container {
+  position: absolute;
+  height: 80%;
+  width: 500px;
+  top: 50px;
+  right: -80px;
+  background-color: white;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.img-container {
+  flex: 2;
+  height: 550px;
+  background-image: url('https://images.unsplash.com/photo-1559305616-3f99cd43e353?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80');
+  border-radius: 12px;
+  background-position: center;
+}

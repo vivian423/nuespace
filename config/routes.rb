@@ -12,19 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :pages, only: :dashboard
-  # get 'reviews/new'
-  # get 'reviews/create'
-  # get 'reviews/show'
-  # get 'reviews/destroy'
-  # get 'bookings/new'
-  # get 'bookings/create'
-  # get 'listings/index'
-  # get 'listings/show'
-  # get 'listings/new'
-  # get 'listings/create'
-  # get 'listings/edit'
-  # get 'listings/update'
-  # get 'listings/destroy'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
