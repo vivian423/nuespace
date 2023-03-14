@@ -7,7 +7,9 @@
   </div>
   <div class="container">
        <p>-----main photo----</p>
-      <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if listing.photo.key %>
+          <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
       <p><%= @listing.listing_description %></p>
       <p>Location: <%= @listing.listing_address %></p>
       <p>Available Amenities: <%= @listing.listing_amenities %></p>
@@ -20,6 +22,8 @@
     </div>
       <% end %>
   </div>
-
-   <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-success"%>
+  <div class="d-flex">
+    <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-outline-success me-3" %>
+    <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-success" %>
+  </div>
 </div>

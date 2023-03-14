@@ -1,2 +1,19 @@
-<h1>Listings#edit</h1>
-<p>Find me in app/views/listings/edit.html.erb</p>
+<div class="container">
+  <div class="d-flex">
+    <h1 class="flex-grow-1 py-3">Edit your listing!</h1>
+    <div class="mt-4">
+      <%= link_to "Cancel", listing_path(@listing), class: "btn btn-outline-success me-3" %>
+    </div>
+  </div>
+
+  <%= simple_form_for(@listing) do |f| %>
+      <%= f.input :listing_name %>
+      <%= f.input :listing_address %>
+      <%= f.input :listing_description %>
+      <%= f.input :listing_amenities %>
+      <%= f.input :photo, as: :file, label: 'Main photo of your listing' %>
+      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Additional photos'  %>
+      <%= f.button :submit, class: "btn btn-outline-success"%>
+  <% end %>
+
+</div>

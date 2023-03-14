@@ -1,9 +1,12 @@
 <div class="container">
+  <div class="d-flex">
+    <h1 class="flex-grow-1 py-3">All Spaces Available</h1>
+    <div class="mt-4">
+      <%= link_to "Create a new listing", new_listing_path, class: "btn btn-outline-success"%>
+    </div>
+  </div>
 
-  <%= link_to "Create a new list", new_listing_path, class: "btn btn-outline-success"%>
-
-  <h1>All Spaces Available</h1>
-  <ul class="listings">
+  <ul class="cards list-unstyled">
     <% @listings.each do |listing| %>
     <li>
       <div class="card">
@@ -13,6 +16,9 @@
         <% if listing.photo.key %>
            <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
+        <div>
+          <%= link_to "View listing", listing_path(listing), class: "btn btn-outline-success"%>
+        </div>
       </div>
     </li>
     <% end %>
