@@ -7,7 +7,7 @@
     <% @listings.each do |listing| %>
     <li>
       <div class="card">
-        <%= listing.listing_name %>
+        <%= link_to listing.listing_name, listing_path(listing) %>
         <%= listing.listing_address %>
         <%= listing.listing_amenities %>
         <% if listing.photo.key %>
