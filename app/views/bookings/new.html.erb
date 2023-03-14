@@ -1,2 +1,9 @@
-<h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p>
+<div class="container">
+<h1 class="py-3">Make your booking for <%= @listing.listing_name %></h1>
+<%= simple_form_for([@listing, @booking]) do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.button :submit, class: "btn btn-outline-success"%>
+<% end %>
+
+</div>
