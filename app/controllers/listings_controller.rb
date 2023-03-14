@@ -28,6 +28,10 @@ class ListingsController < ApplicationController
   end
 
   def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+    flash[:success] = "The item was successfully destroyed."
+    redirect_to listings_path, status: :see_other
   end
 
 private
