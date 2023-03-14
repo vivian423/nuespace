@@ -16,4 +16,6 @@
     </div>
       <% end %>
   </div>
+
+   <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-success"%>
 </div>
