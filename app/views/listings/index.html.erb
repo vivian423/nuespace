@@ -1,41 +1,21 @@
 <div class="container">
-  <%= link_to "Create a new list", new_listing_path, class: "btn btn-outline-success"%>
-  <div class="page-header">
-    <h1>Listings Index</h1>
-  </div>
 
-<%# this entire div can be deleted if we decide to use the cards container %>
-
-  <div class="container">
+  <h1>All Spaces Available</h1>
+  <ul>
     <% @listings.each do |listing| %>
-      <%= link_to listing.listing_name, listing %>
-      <%= listing.listing_address %>
-      <%= listing.listing_amenities %>
-    <div class="img-rounded">
-      <% listing.photos.each do |photo| %>
-      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    </div>
-    <% end %>
-  </div>
-</div>
-
-<%# below - single image upload does not work yet %>
-<div class="container">
-  <div class="card-listing">
-  <% @listings.each do |listing| %>
-    <%# <%= cl_image_tag listing.photo.key %>
-    <img src="https://images.unsplash.com/photo-1600508774634-4e11d34730e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y293b3JraW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=900&q=60" />
-    <div class="card-listing-infos">
-      <div>
-        <h2><%= link_to listing.listing_name, listing %></h2>
-        <p><%= listing.listing_address %></p>
-        <p><%= listing.listing_amenities %></p>
+    <li>
+      <div class="card">
+        <%= listing.listing_name %>
+        <%= listing.listing_address %>
+        <%= listing.listing_amenities %>
+        <%= listing.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
       </div>
-      <h2 class="card-listing-pricing">$331</h2>
-      <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-listing-user avatar-bordered" />
-    </div>
-  <% end %>
-  </div>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Create a new list", new_listing_path, class: "btn btn-outline-success"%>
 
 </div>
