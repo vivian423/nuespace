@@ -7,8 +7,8 @@
   </div>
   <div class="container">
        <p>-----main photo----</p>
-      <% if listing.photo.key %>
-          <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if @listing.photo.key %>
+          <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
       <p><%= @listing.listing_description %></p>
       <p>Location: <%= @listing.listing_address %></p>
