@@ -6,7 +6,6 @@
     <%= f.input :listing_address %>
     <%= f.input :listing_description %>
     <%= f.input :listing_amenities %>
-    <%# how do we rename the input for "main photos" and "other photos" %>
     <%= f.input :photo, as: :file %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.button :submit, class: "btn btn-outline-success"%>

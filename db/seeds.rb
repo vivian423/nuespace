@@ -7,3 +7,5 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Listing.new(listing_name: "Downtown coffee shop with private space", :listing_address: "Old town, Valencia", photos: [], :listing_amenities)
+
+
