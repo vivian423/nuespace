@@ -26,7 +26,13 @@ class ListingsController < ApplicationController
   end
 
   def update
-
+    # raise
+    @listing = Listing.find(params[:id])
+    if @listing.update(listing_params)
+      redirect_to @listing, notice: "Listing was successfully edited."
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
