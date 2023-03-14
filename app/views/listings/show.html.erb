@@ -1,14 +1,16 @@
+
 <%= link_to "Back to all listings", listings_path, class: "btn btn-outline-success"%>
 <%= link_to "Make a booking now!", new_listing_booking_path(@listing), class: "btn btn-outline-primary"%>
 
 <div class="container">
+  <%= link_to "Back to all listings", listings_path, class: "btn btn-outline-success"%>
   <div class="page-header">
     <h1><%= @listing.listing_name %></h1>
   </div>
   <div class="container">
        <p>-----main photo----</p>
-      <% if listing.photo.key %>
-          <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if @listing.photo.key %>
+          <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
       <p><%= @listing.listing_description %></p>
       <p>Location: <%= @listing.listing_address %></p>
@@ -23,7 +25,11 @@
       <% end %>
   </div>
   <div class="d-flex">
-    <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-outline-success me-3" %>
-    <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-success" %>
+    <% if policy(@listing).edit? %>
+      <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-outline-success me-3" %>
+    <% end %>
+    <% if policy(@listing).destroy? %>
+      <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-success" %>
+    <% end %>
   </div>
 </div>
