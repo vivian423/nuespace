@@ -1,12 +1,12 @@
 class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show ]
+  before_action :set_listing, only: %i[show edit update destroy]
 
   def index
     @listings = policy_scope(Listing)
   end
 
   def show
-    @listing = Listing.find(params[:id])
     authorize @listing
   end
 
@@ -27,13 +27,10 @@ class ListingsController < ApplicationController
   end
 
   def edit
-    @listing = Listing.find(params[:id])
     authorize @listing
   end
 
   def update
-    @listing = Listing.find(params[:id])
-
     if @listing.update(listing_params)
       redirect_to @listing, notice: "Listing was successfully edited."
     else
@@ -42,7 +39,6 @@ class ListingsController < ApplicationController
   end
 
   def destroy
-    @listing = Listing.find(params[:id])
     authorize @listing
     @listing.destroy
     flash[:success] = "The item was successfully destroyed."
@@ -52,7 +48,7 @@ class ListingsController < ApplicationController
 private
 
   def set_listing
-
+    @listing = Listing.find(params[:id])
   end
 
   def listing_params
