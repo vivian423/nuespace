@@ -6,15 +6,17 @@
     <h1><%= @listing.listing_name %></h1>
   </div>
   <div class="container">
-    <p>main photo</p>
+       <p>-----main photo----</p>
       <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill %>
       <p><%= @listing.listing_description %></p>
       <p>Location: <%= @listing.listing_address %></p>
       <p>Available Amenities: <%= @listing.listing_amenities %></p>
-     <p>multiple photos</p>
+     <p>-----multiple photos below ----</p>
     <div class="thumbnail">
+    <% unless @listing.photos.empty? %>
       <% @listing.photos.each do |photo| %>
       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
     </div>
       <% end %>
   </div>

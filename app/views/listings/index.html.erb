@@ -3,24 +3,16 @@
   <%= link_to "Create a new list", new_listing_path, class: "btn btn-outline-success"%>
 
   <h1>All Spaces Available</h1>
-  <ul>
+  <ul class="listings">
     <% @listings.each do |listing| %>
     <li>
       <div class="card">
         <%= listing.listing_name %>
         <%= listing.listing_address %>
         <%= listing.listing_amenities %>
-        <p>main photo</p>
         <% if listing.photo.key %>
            <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
-        <% unless listing.photos.empty? %>
-          <% listing.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <% end %>
-        <p>multiple photos</p>
-
       </div>
     </li>
     <% end %>

@@ -6,8 +6,8 @@
     <%= f.input :listing_address %>
     <%= f.input :listing_description %>
     <%= f.input :listing_amenities %>
-    <%= f.input :photo, as: :file %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photo, as: :file, label: 'Main photo of your listing' %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Additional photos'  %>
     <%= f.button :submit, class: "btn btn-outline-success"%>
 <% end %>
 
