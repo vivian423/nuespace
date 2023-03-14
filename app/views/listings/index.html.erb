@@ -1,13 +1,19 @@
-<h1>Listings Index</h1>
-<p>Find me in app/views/listings/index.html.erb</p>
+<div class="container">
+  <h1>All Spaces Available</h1>
+  <ul>
+    <% @listings.each do |listing| %>
+    <li>
+      <div class="card">
+        <%= listing.listing_name %>
+        <%= listing.listing_address %>
+        <%= listing.listing_amenities %>
+        <%= listing.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
 
-<% @listings.each do |listing| %>
-  <%= listing.listing_name %>
-  <%= listing.listing_address %>
-  <%= listing.listing_amenities %>
-  <%= listing.photos.each do |photo| %>
-  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-<% end %>
-
- <%= link_to "Create a new list", new_listing_path, class: "btn btn-outline-success"%>
+  <%= link_to "Create a new list", new_listing_path, class: "btn btn-outline-success"%>
+</div>
