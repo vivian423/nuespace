@@ -5,7 +5,14 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+   Listing.create!(
+    listing_name: 'Dream House',
+    listing_address: 'Halden, Norway',
+    listing_amenities:
+   )
 
-# Listing.new(listing_name: "Downtown coffee shop with private space", :listing_address: "Old town, Valencia", photos: [], :listing_amenities)
-
-
+Listing.create(listing_name: "Dream House", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
+Listing.create(listing_name: "Awesome House", listing_address: "Old town, Oslo", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
+Listing.create(listing_name: "Big House", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
+Listing.create(listing_name: "Rich House", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
+Listing.create(listing_name: "Dinchak Ghar", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
