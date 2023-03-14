@@ -7,16 +7,27 @@
 #   Character.create(name: "Luke", movie: movies.first)
 Listing.destroy_all
 
+listing_seed = Listing.new(
+  listing_name: 'Basecamp',
+  listing_address: 'Halden, Norway',
+  listing_amenities: 'wi-fi',
+  listing_description: 'Centrally located in Longyearbyen, Basecamp Hotel is a traditional trapper's lodge-style property just 15 minutes’ drive from Longyearbyen Airport.
+  # listing_poster_url: how to add images?
 
-listing.new
-listing.user = 
-Listing.create!(
-    listing_name: 'Basecamp',
-    listing_address: 'Halden, Norway',
-    listing_amenities:
-    listing_description: 'Centrally located in Longyearbyen, Basecamp Hotel is a traditional trapper's lodge-style property just 15 minutes’ drive from Longyearbyen Airport.
-    listing_poster_url:
-  )
+  # for URLs
+#   require "open-uri"
+
+# file = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/1200px-NES-Console-Set.jpg")
+# article = Article.new(title: "NES", body: "A great console")
+# article.photo.attach(io: file, filename: "nes.png", content_type: "image/png")
+# article.save
+
+# article.photo.attach(io: File.open(Rails.root.join(‘app’, ‘assets’, ‘local, ‘name.jpg’), filename: "nes.png", content_type: "image/png")
+
+# )
+# listing_seed.photo = url("")
+# listing_seed.user_id = @user_seed
+# listing_seed.save
 
    Listing.create!(
     listing_name: 'Svalbard',
