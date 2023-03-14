@@ -1,15 +1,19 @@
-<h1>Listings#show</h1>
-<p>Find me in app/views/listings/show.html.erb</p>
+<%= link_to "Back to all listings", listings_path, class: "btn btn-outline-success"%>
 
 
 <div class="container">
-<h1><%= @listing.listing_name %></h1>
-</div>
-<div class="container">
-  <h4><%= @listing.listing_name %></h4>
-  <p>Location: <%= @listing.listing_address %></p>
-  <p>Available Amenities: <%= @listing.listing_amenities %></p>
-  <% @listing.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+  <div class="page-header">
+    <h1><%= @listing.listing_name %></h1>
+  </div>
+  <div class="container">
+    <%# <%= cl_image_tag @listing.photo.key, height: 300, width: 400, crop: :fill %>
+      <p><%= @listing.listing_description %></p>
+      <p>Location: <%= @listing.listing_address %></p>
+      <p>Available Amenities: <%= @listing.listing_amenities %></p>
+    <div class="thumbnail">
+      <% @listing.photos.each do |photo| %>
+      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+    </div>
+      <% end %>
+  </div>
 </div>
