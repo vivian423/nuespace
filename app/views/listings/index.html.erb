@@ -6,22 +6,28 @@
     </div>
   </div>
 
-  <ul class="cards list-unstyled">
-    <% @listings.each do |listing| %>
-    <li>
-      <div class="card">
-        <%= link_to listing.listing_name, listing_path(listing) %>
-        <%= listing.listing_address %>
-        <%= listing.listing_amenities %>
-        <% if listing.photo.key %>
-           <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-        <div>
-          <%= link_to "View listing", listing_path(listing), class: "btn btn-outline-success"%>
+
+  <div class="container">
+    <div class="row">
+        <% @listings.each do |listing| %>
+      <div class="col-sm">
+        <div class="card-listing">
+          <% if listing.photo.key %>
+            <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
+            <% end %>
+          <div class="card-listing-infos">
+            <div>
+              <h2><%= link_to listing.listing_name, listing_path(listing) %></h2>
+              <p><%= listing.listing_address %></p>
+              <p><%= listing.listing_amenities %></p>
+            </div>
+            <h2 class="card-listing-pricing">£99.99</h2>
+          </div>
+
         </div>
       </div>
-    </li>
-    <% end %>
-  </ul>
-
+          <% end %>
+    </div>
+        <%# <%= link_to "View listing", listing_path(listing), class: "btn btn-outline-success"%>
+  </div>
 </div>

@@ -5,8 +5,8 @@
 }
 
 .card-listing > img {
-  height: 80px;
-  width: 120px;
+  height: 200px;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -14,6 +14,11 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+.card-listing a {
+  text-decoration: none;
+  color: black;
 }
 
 .card-listing p {
