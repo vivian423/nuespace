@@ -5,14 +5,66 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-   Listing.create!(
-    listing_name: 'Dream House',
+Listing.destroy_all
+
+
+listing.new
+listing.user = 
+Listing.create!(
+    listing_name: 'Basecamp',
     listing_address: 'Halden, Norway',
     listing_amenities:
-   )
+    listing_description: 'Centrally located in Longyearbyen, Basecamp Hotel is a traditional trapper's lodge-style property just 15 minutes’ drive from Longyearbyen Airport.
+    listing_poster_url:
+  )
 
-Listing.create(listing_name: "Dream House", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
-Listing.create(listing_name: "Awesome House", listing_address: "Old town, Oslo", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
-Listing.create(listing_name: "Big House", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
-Listing.create(listing_name: "Rich House", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
-Listing.create(listing_name: "Dinchak Ghar", listing_address: "Old town, Valencia", photos: [], listing_amenities: "Wifi, Coffee, Parking, Kitchen",listing_description: "This is a dream house, you will love it")
+   Listing.create!(
+    listing_name: 'Svalbard',
+    listing_address: 'Halden, Norway',
+    listing_amenities: 'Free Wi_Fi, TV with cable'
+    listing_description: 'Located in Longyearbyen, 1.1 km from Svalbard Church, Svalbard Hotell | The Vault provides accommodation with free bikes, free private parking, a shared lounge and a terrace.'
+    listing_poster_url:
+
+  )
+
+
+   Listing.create!(
+    listing_name: 'Funken',
+    listing_address: 'Halden, Norway',
+    listing_amenities: 'Free Wi_Fi, TV with cable'
+    listing_description: 'This hotel is situated on the island of Spitsbergen, in Norway’s Arctic Archipelago, Svalbard.'
+    listing_poster_url:
+  )
+
+   Listing.create!(
+    listing_name: 'Radisson Blu',
+    listing_address: 'Oslo, Norway',
+    listing_amenities: 'Free Wi_Fi, TV with cable'
+    listing_description: 'Radisson Blu Polar Hotel is the northernmost full-service hotel in the world, located in Longyearbyen. Clean room, well positioned, enough dark curains to be able to sleep during midnight sun.'
+    listing_poster_url:
+  )
+
+  Listing.create!(
+    listing_name: 'Russkiy',
+    listing_address: 'Bergen, Norway',
+    listing_amenities: 'Free Wi_Fi, TV with cable'
+    listing_description: 'Located in Longyearbyen and within 1.2 km of Svalbard Church, Russkiy Dom features a shared lounge, non-smoking rooms, and free WiFi. just quiet, comfortable and clean.'
+    listing_poster_url:
+  )
+
+  Listing.create!(
+    listing_name: 'Haugen',
+    listing_address: 'Kongsberg, Norway',
+    listing_amenities: 'Free Wi_Fi, TV with cable'
+    listing_description: 'Situated in Longyearbyen, within 1.3 km of Svalbard Church.'
+    listing_poster_url:
+  )
+
+   Listing.create!(
+    listing_name: 'Barentsburg',
+    listing_address: 'Kristiansand, Norway',
+    listing_amenities: 'Kitchen facilities, like: fridge, coffee maker and microwave,
+    TV with cable, free Wi-Fi'
+    listing_description: 'Hotel Barentsburg is on the Svalbard island of Spitsbergen. Overlooking the Isfjord, it offers a restaurant and bar.'
+    listing_poster_url:
+  )
