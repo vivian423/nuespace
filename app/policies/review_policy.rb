@@ -7,7 +7,7 @@ class ReviewPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    user.booking_ids.include?(record.booking.id)
   end
 
   def create?

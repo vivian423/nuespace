@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   def new
     @booking = Booking.find(params[:booking_id])
     @review = Review.new
-    @policy = false
+    @review.booking = @booking
     authorize @review
   end
 
@@ -23,12 +23,12 @@ class ReviewsController < ApplicationController
     @review = policy_scope(Review)
   end
 
-  def destroy
-    @review = Review.find(params[:id])
-    @review.destroy
-    flash[:success] = "The item was successfully destroyed."
-    redirect_to listing_path(params[:listing_id]), status: :see_other
-  end
+  # def destroy
+  #   @review = Review.find(params[:id])
+  #   @review.destroy
+  #   flash[:success] = "The item was successfully destroyed."
+  #   redirect_to listing_path(params[:listing_id]), status: :see_other
+  # end
 
   private
 
