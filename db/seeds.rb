@@ -47,7 +47,7 @@ file9 = URI.open("https://thumbs.dreamstime.com/b/restaurant-interior-18906847.j
 second_seed = Listing.new(
   listing_name: 'Bardolino',
   listing_address: 'Veneto, Italy',
-  listing_amenities: 'WiFi, garden, tv',
+  listing_amenities: 'WiFi, Garden, TV display',
   listing_description: 'Reservations | Outdoor Seating | Private Dining | Seating | Parking Available | Valet Parking | Highchairs Available | Wheelchair Accessible | Serves Alcohol | Full Bar | Accepts Credit Cards | Table Service',
 )
 # main picture
@@ -72,7 +72,7 @@ file14 = URI.open("https://thumbs.dreamstime.com/b/tapas-bar-barcelona-august-cu
 third_seed = Listing.new(
   listing_name: 'Viana',
   listing_address: 'Barcelona, Spain',
-  listing_amenities: 'WiFi, bohemian vibe',
+  listing_amenities: 'WiFi, TV display',
   listing_description: 'Located in an area that is best known for its nightlife, Viana is one of the most popular restaurants in Gothic Quarter. This restaurant serves Spanish and international food as well as cocktails. This is a small restaurant with a bar inside so you might have to wait a little while to get a table. It is recomme',
 )
 # main picture
@@ -109,10 +109,6 @@ fourth_seed.photos.attach(io: file19, filename: "c4.png", content_type: "image/p
 
 fourth_seed.user = fourth_user
 fourth_seed.save
-
-
-
-
 
 fifth_user = User.create(first_name: "Atika", last_name: "Gautam", password: "123456", phone_number: "21654530907", email: "atika@gmail.com")
 

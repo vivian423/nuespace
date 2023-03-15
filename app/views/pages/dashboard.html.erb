@@ -1,9 +1,43 @@
-<div class="container">
-  <h1>All of my bookings</h1>
-  <% @bookings.each do |booking| %>
-    <h2><%= booking.listing.listing_name %></h2>
-    <p>Reservation start date: <%= booking.start_date %></p>
-    <p>Reservation end date: <%= booking.end_date %></p>
-    <%= link_to "Create a review", new_booking_review_path(booking), class: "btn btn-success" %>
+<div class="container p-3">
+  <h2 class="py-2">My current bookings</h2>
+
+  <div class="card-booking">
+    <% if @bookings.empty? %>
+      <p>You current have no bookings</p>
+    <% else %>
+      <% @bookings.each do |b| %>
+        <% if b.listing.photo.key %>
+          <%= cl_image_tag b.listing.photo.key %>
+        <% end %>
+      <div class="card-booking-infos">
+        <h2><%= link_to b.listing.listing_name, listing_path(b.listing) %></h2>
+        <p><strong>Booking start date: </strong> <%= b.start_date %></p>
+        <p><strong>booking end date: </strong> <%= b.end_date %></p>
+        <%= link_to "Create a review", new_booking_review_path(b), class: "btn btn-success" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container p-3">
+  <h2 class="py-2">My listings</h2>
+  <% if @received_bookings.empty? %>
+    <p> No one has booked your listings yet </p>
+  <% else %>
+    <div class="card-booking">
+    <% @received_bookings.each do |b| %>
+      <%= cl_image_tag b.listing.photo.key %>
+      <div class="card-booking-infos">
+        <h2><%= link_to b.listing.listing_name, listings_path(b) %></h2>
+        <p><strong>Booked by: </strong> <%= b.user.first_name %> <%= b.user.last_name %></p>
+        <p><strong>Contact info: </strong> <%= b.user.email %> || <%= b.user.phone_number %></p>
+        <p><strong>Booking start date: </strong> <%= b.start_date  %></p>
+        <p><strong>Booking end date: </strong> <%= b.end_date  %></p>
+    <% end %>
+      </div>
+  </div>
   <% end %>
+
 </div>
