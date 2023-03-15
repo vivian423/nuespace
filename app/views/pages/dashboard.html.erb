@@ -23,17 +23,21 @@
 
 <div class="container p-3">
   <h2 class="py-2">My listings</h2>
-  <div class="card-booking">
-  <% @received_bookings.each do |b| %>
-    <%= cl_image_tag b.listing.photo.key %>
- <div class="card-booking-infos">
+  <% if @received_bookings.empty? %>
+    <p> No one has booked your listings yet </p>
+  <% else %>
+    <div class="card-booking">
+    <% @received_bookings.each do |b| %>
+      <%= cl_image_tag b.listing.photo.key %>
+      <div class="card-booking-infos">
         <h2><%= link_to b.listing.listing_name, listings_path(b) %></h2>
         <p><strong>Booked by: </strong> <%= b.user.first_name %> <%= b.user.last_name %></p>
         <p><strong>Contact info: </strong> <%= b.user.email %> || <%= b.user.phone_number %></p>
         <p><strong>Booking start date: </strong> <%= b.start_date  %></p>
         <p><strong>Booking end date: </strong> <%= b.end_date  %></p>
+    <% end %>
+      </div>
+  </div>
   <% end %>
 
-    </div>
-  </div>
 </div>
