@@ -14,9 +14,11 @@
 h1, h2, h3 {
   font-family: 'Source Sans Pro', sans-serif;
 }
-body {
-  // min-height: 100vh;
-  // display: flex;
+
+body{
+  min-height: 100vh;
+  flex-direction: column;
+
 }
 // a {
 //   text-decoration: none;
