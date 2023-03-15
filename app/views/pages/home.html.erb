@@ -9,8 +9,10 @@
           <small id="searchHelp" class="form-text text-muted">Enter the location, which you like!</small>
         </div>
         <div class="form-group">
-          <label for="">Prefered dates:</label> <!-- Use calendar -->
-          <input type="text" class="form-control">
+          <label for="start">Start date:</label> <!-- Use calendar -->
+          <input type="date" id="start" name="trip-start"
+                  value="2023-03-22"
+                  min="2023-01-01" max="2023-12-31">
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>
