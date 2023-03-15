@@ -11,5 +11,4 @@ class PagesController < ApplicationController
       listing.bookings
     end.flatten
   end
-
 end
