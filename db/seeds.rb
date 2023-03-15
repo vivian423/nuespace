@@ -37,6 +37,7 @@ first_seed.save
 
 second_user = User.create(first_name: "Giovanni", last_name: "Giampaolo", password: "123456", phone_number: "554676880907", email: "giovanni@gmail.com")
 
+
 file5 = URI.open("https://thumbs.dreamstime.com/b/typical-italian-restaurant-historic-alley-assisi-italy-42678646.jpg")
 file6 = URI.open("https://thumbs.dreamstime.com/b/cioppino-681734.jpg")
 file7 = URI.open("https://thumbs.dreamstime.com/b/italian-restaurant-23338098.jpg")
