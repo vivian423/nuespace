@@ -5,4 +5,6 @@ class Listing < ApplicationRecord
   has_many :users, through: :bookings
   has_one_attached :photo
   has_many_attached :photos
+
+  validates :listing_name, :listing_address, :listing_amenities, presence: true
 end
