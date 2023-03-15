@@ -47,7 +47,7 @@ file9 = URI.open("https://thumbs.dreamstime.com/b/restaurant-interior-18906847.j
 second_seed = Listing.new(
   listing_name: 'Bardolino',
   listing_address: 'Veneto, Italy',
-  listing_amenities: 'WiFi, garden, tv',
+  listing_amenities: 'WiFi, Garden, TV display',
   listing_description: 'Reservations | Outdoor Seating | Private Dining | Seating | Parking Available | Valet Parking | Highchairs Available | Wheelchair Accessible | Serves Alcohol | Full Bar | Accepts Credit Cards | Table Service',
 )
 # main picture
@@ -72,7 +72,7 @@ file14 = URI.open("https://thumbs.dreamstime.com/b/tapas-bar-barcelona-august-cu
 third_seed = Listing.new(
   listing_name: 'Viana',
   listing_address: 'Barcelona, Spain',
-  listing_amenities: 'WiFi, bohemian vibe',
+  listing_amenities: 'WiFi, TV display',
   listing_description: 'Located in an area that is best known for its nightlife, Viana is one of the most popular restaurants in Gothic Quarter. This restaurant serves Spanish and international food as well as cocktails. This is a small restaurant with a bar inside so you might have to wait a little while to get a table. It is recomme',
 )
 # main picture
@@ -97,7 +97,7 @@ file19 = URI.open("https://thumbs.dreamstime.com/b/glass-beers-local-pub-low-ang
 fourth_seed = Listing.new(
   listing_name: ' Worlds End',
   listing_address: '174 Camden High St, Camden Town',
-  listing_amenities: 'London’s Biggest Pubs | Very Popular | Rock Music Fans | Underworld Club | Live Music ',
+  listing_amenities: 'WiFi, TV display',
   listing_description: 'The Worlds End is a landmark pub in Camden Town and is known throughout the UK for its rock music-loving customers. One of the reasons visitors prefer this pub is because it’s literally across the road from the train station. But more importantly, it has vyed for the position of London’s largest pub over the years and word quickly gets around about the huge crowds inside that spill outside and the buzzing atmosphere.',
 )
 # main picture
@@ -111,10 +111,6 @@ fourth_seed.photos.attach(io: file19, filename: "c4.png", content_type: "image/p
 fourth_seed.user = fourth_user
 fourth_seed.save
 
-
-
-
-
 fifth_user = User.create(first_name: "Atika", last_name: "Gautam", password: "123456", phone_number: "21654530907", email: "atika@gmail.com")
 
 file20 = URI.open("https://thumbs.dreamstime.com/b/interiors-fashion-themed-inspired-runway-project-restaurant-delhi-india-runway-project-restaurant-delhi-india-182374763.jpg")
@@ -126,7 +122,7 @@ file24 = URI.open("https://thumbs.dreamstime.com/b/interiors-fashion-themed-insp
 fifth_seed = Listing.new(
   listing_name: 'DelhiSpice',
   listing_address: ' 4925 BETHESDA AVE, BETHESDA, MD 20814, US',
-  listing_amenities: 'Hand-crafted Decor -A mix of styles and colors | Cozy Place - Feel at home and find your atmosphere | Relaxed Atmosphere - Take refuge in our greenery and away from the crowds.',
+  listing_amenities: 'WiFi',
   listing_description: 'India has always been known as a land of spices and Asia’s largest spice market is in Delhi!! Join us as we take you through an aromatic journey of both local and exotic spices blended with the labor of love and effort put into each of our dishes, we try to bring diverse flavors of Delhi to you through the spices used to create our signature dishes.',
 )
 # main picture
