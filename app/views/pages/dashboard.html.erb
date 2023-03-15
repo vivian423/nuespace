@@ -1,10 +1,10 @@
 <div class="container p-3">
   <h2 class="py-2">My current bookings</h2>
 
-  <div class="card-booking">
     <% if @bookings.empty? %>
-      <p>You current have no bookings</p>
+      <p>You currently have no bookings</p>
     <% else %>
+      <div class="card-booking">
       <% @bookings.each do |b| %>
         <% if b.listing.photo.key %>
           <%= cl_image_tag b.listing.photo.key %>
