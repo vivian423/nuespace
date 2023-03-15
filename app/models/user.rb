@@ -9,6 +9,6 @@ class User < ApplicationRecord
   has_many :listings
   has_many :reviews
 
+  validates :first_name, :last_name, :email, :encrypted_password, presence: true
   validates :phone_number, uniqueness: true
-
 end

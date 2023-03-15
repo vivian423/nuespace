@@ -1,8 +1,9 @@
 <div class="container">
   <h1>All of my bookings</h1>
-  <% @bookings.each do |b| %>
-    <h2><%= b.listing.listing_name %></h2>
-    <p>Reservation start date: <%= b.start_date %></p>
-    <p>Reservation end date: <%= b.end_date %></p>
+  <% @bookings.each do |booking| %>
+    <h2><%= booking.listing.listing_name %></h2>
+    <p>Reservation start date: <%= booking.start_date %></p>
+    <p>Reservation end date: <%= booking.end_date %></p>
+    <%= link_to "Create a review", new_booking_review_path(booking), class: "btn btn-success" %>
   <% end %>
 </div>

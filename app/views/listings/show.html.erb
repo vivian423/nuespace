@@ -29,4 +29,18 @@
       <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-success me-3" %>
     <% end %>
   </div>
+
+  <% if @listing.reviews.length > 0 %>
+      <ul class="list-unstyled mt-4">
+        <% @listing.reviews.each do |review| %>
+          <li>
+            <div class="card mb-3 p-3">
+              <p>From: <%= review.user.first_name %></p>
+              <p>Comment: <%= review.comment %></p>
+              <p>Rating: <%= review.rating %></p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+  <% end %>
 </div>
