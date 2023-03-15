@@ -97,9 +97,8 @@ file19 = URI.open("https://thumbs.dreamstime.com/b/glass-beers-local-pub-low-ang
 fourth_seed = Listing.new(
   listing_name: ' Worlds End',
   listing_address: '174 Camden High St, Camden Town',
-  listing_amenities: 'WiFi, TV display',
-  listing_description: 'The Worlds End is a landmark pub in Camden Town and is known throughout the UK for its rock music-loving customers. One of the reasons visitors prefer this pub is because it’s literally across the road from the train station. But more importantly, it has vyed for the position of London’s largest pub over the years and word quickly gets around about the huge crowds inside that spill outside and the buzzing atmosphere.',
-)
+  listing_amenities: 'Wi-Fi, Live Music',
+  listing_description: 'The Worlds End is a landmark pub in Camden Town and is known throughout the UK for its rock music-loving customers.The Londons largest pub over the years.')
 # main picture
 fourth_seed.photo.attach(io: file15, filename: "c.png", content_type: "image/png")
 # Secondary pictures
@@ -122,8 +121,8 @@ file24 = URI.open("https://thumbs.dreamstime.com/b/interiors-fashion-themed-insp
 fifth_seed = Listing.new(
   listing_name: 'DelhiSpice',
   listing_address: ' 4925 BETHESDA AVE, BETHESDA, MD 20814, US',
-  listing_amenities: 'WiFi',
-  listing_description: 'India has always been known as a land of spices and Asia’s largest spice market is in Delhi!! Join us as we take you through an aromatic journey of both local and exotic spices blended with the labor of love and effort put into each of our dishes, we try to bring diverse flavors of Delhi to you through the spices used to create our signature dishes.',
+  listing_amenities: 'Wi-Fi, Live Music ',
+  listing_description: 'India has always been known as a land of spices and Asia’s largest spice market is in Delhi. We try to bring diverse flavors of Delhi to you through the spices used to create our signature dishes.Hand-crafted Decor -A mix of styles and colors.'
 )
 # main picture
 fifth_seed.photo.attach(io: file20, filename: "d.png", content_type: "image/png")
