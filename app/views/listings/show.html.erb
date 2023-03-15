@@ -1,39 +1,34 @@
 <div class="container">
-  <%= link_to "Back to all listings", listings_path, class: "btn btn-outline-success"%>
-  <%= link_to "Make a booking now!", new_listing_booking_path(@listing), class: "btn btn-outline-primary"%>
-  <div class="page-header">
-    <h1><%= @listing.listing_name %></h1>
+  <div class="d-flex mb-3 mt-3">
+    <h1 class="flex-grow-1"><%= @listing.listing_name %></h1>
+    <div class="mt-2 me-3">
+      <%= link_to "Back to all listings", listings_path, class: "btn btn-outline-success"%>
+    </div>
   </div>
-  <div class="container">
-       <p>-----main photo----</p>
-       <div class="container">
-          <div class="row">
-            <div class="col">
-              <% if @listing.photo.key %>
-              <%= cl_image_tag @listing.photo.key, height: 600, width: 600, crop: :fill %>
-              <% end %>
-            </div>
-            <div class="col">
-              <div class="container">
-                  <div class="row">
-                    <% unless @listing.photos.empty? %>
-                      <% @listing.photos.each do |photo| %>
-                        <div class="col">
-                          <%= cl_image_tag photo.key, height: 250, width: 250, crop: :fill %>
-                        </div>
-                      <% end %>
-                    <% end %>
-                  </div>
-              </div>
-            </div>
-          </div>
-       </div>
 
+  <div class="img-grid">
+    <% if @listing.photo.key %>
+    <%= cl_image_tag @listing.photo.key, height: 600, width: 600, crop: :fill, class: "img-grid-main" %>
+    <% end %>
+    <% unless @listing.photos.empty? %>
+      <% @listing.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 250, width: 250, crop: :fill %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="d-flex">
+    <div class="flex-grow-1 py-3 me-5">
       <p><%= @listing.listing_description %></p>
       <p>Location: <%= @listing.listing_address %></p>
       <p>Available Amenities: <%= @listing.listing_amenities %></p>
-
+    </div>
+    <div>
+      <%= link_to "Make a booking now!", new_listing_booking_path(@listing), class: "btn btn-primary me-3"%>
+    </div>
   </div>
+
+
   <div class="d-flex">
     <% if policy(@listing).edit? %>
       <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-outline-success me-3" %>
@@ -44,16 +39,19 @@
   </div>
 
   <% if @listing.reviews.length > 0 %>
-      <ul class="list-unstyled mt-4">
-        <% @listing.reviews.each do |review| %>
-          <li>
-            <div class="card mb-3 p-3">
-              <p>From: <%= review.user.first_name %></p>
-              <p>Comment: <%= review.comment %></p>
-              <p>Rating: <%= review.rating %></p>
-            </div>
-          </li>
-        <% end %>
-      </ul>
+    <div class="mt-3"></div>
+      <h3>Reviews:</h3>
+        <ul class="list-unstyled mt-4">
+          <% @listing.reviews.each do |review| %>
+            <li>
+              <div class="card mb-3 p-3">
+                <p>From: <%= review.user.first_name %></p>
+                <p>Comment: <%= review.comment %></p>
+                <p>Rating: <%= review.rating %></p>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+    </div>
   <% end %>
 </div>
