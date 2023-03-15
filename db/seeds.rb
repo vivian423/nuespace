@@ -134,3 +134,20 @@ fifth_seed.photos.attach(io: file24, filename: "d4.png", content_type: "image/pn
 
 fifth_seed.user = fifth_user
 fifth_seed.save!
+
+
+sixth_seed = Listing.new(
+  listing_name: 'MumbaiSpice',
+  listing_address: ' 4925 BETHESDA AVE, BETHESDA, MD 20814, US',
+  listing_amenities: 'Wi-Fi, Live Music ',
+  listing_description: 'India has always been known as a land of spices and Asia’s largest spice market is in Delhi. We try to bring diverse flavors of Delhi to you through the spices used to create our signature dishes.Hand-crafted Decor -A mix of styles and colors.'
+)
+# main picture
+sixth_seed.photo.attach(io: file20, filename: "d.png", content_type: "image/png")
+# Secondary pictures
+sixth_seed.photos.attach(io: file21, filename: "d1.png", content_type: "image/png")
+sixth_seed.photos.attach(io: file22, filename: "d2.png", content_type: "image/png")
+sixth_seed.photos.attach(io: file23, filename: "d3.png", content_type: "image/png")
+sixth_seed.photos.attach(io: file24, filename: "d4.png", content_type: "image/png")
+sixth_seed.user = fifth_user
+sixth_seed.save!
