@@ -3,7 +3,16 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: %i[show edit update destroy]
 
   def index
-    @listings = policy_scope(Listing)
+    if params[:name].present? || params[:address].present?
+      # @name = policy_scope(Listing).where("listing_name @@ ?", "%#{params[:name]}%")
+      @name = policy_scope(Listing).search_by_name_and_description(params[:name])
+      # @address = policy_scope(Listing).where("listing_address @@ ?", "%#{params[:address]}%")
+      @address = policy_scope(Listing).search_by_address(params[:address])
+      @listings = @name + @address
+    else
+      @listings = policy_scope(Listing)
+    end
+
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,
