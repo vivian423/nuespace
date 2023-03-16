@@ -5,7 +5,7 @@ class ListingsController < ApplicationController
   def index
     @listings = policy_scope(Listing)
 
-    if  params[:name].present? && params[:address].present?
+    if params[:name].present? && params[:address].present?
       @listings = @listings.search_by_name_and_description(params[:name])
       @listings = @listings.near(params[:address], 10)
     elsif params[:name].present?
