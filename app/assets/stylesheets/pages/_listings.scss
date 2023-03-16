@@ -2,3 +2,25 @@
   padding-top: .625rem;
   border-width: 5px;
 }
+
+.container-card{
+  display: flex;
+  gap: 10px;
+
+}
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+
+.row-listings {
+  width: 60% !important;
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px;
+  margin-top: 0;
+}
