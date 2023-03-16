@@ -5,7 +5,6 @@ class Listing < ApplicationRecord
   has_many :users, through: :bookings
   has_one_attached :photo
   has_many_attached :photos
-
   validates :listing_name, :listing_address, :listing_amenities, presence: true
 
   include PgSearch::Model
@@ -22,4 +21,6 @@ class Listing < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+  geocoded_by :listing_address
+  after_validation :geocode, if: :will_save_change_to_listing_address?
 end
