@@ -1,7 +1,7 @@
 .img-grid {
-  --gap: 16px;
+  --gap: 12px;
   --num-cols: 4;
-  --row-height: 300px;
+  --row-height: 200px;
 
   box-sizing: border-box;
   padding: var(--gap);
@@ -12,6 +12,7 @@
   grid-template-columns: repeat(var(--num-cols), 1fr);
   grid-auto-rows: var(--row-height);
   gap: var(--gap);
+  margin-bottom: 30px;
 }
 
 .img-grid > img {
@@ -23,37 +24,17 @@
 .img-grid-main {
   grid-column: span 2;
   grid-row: span 2;
+  border-bottom-left-radius: 14px;
+  border-top-left-radius: 14px;
 }
 
-.details {
-  background-color: #ededed;
-  border-radius: .3125rem;
-  flex-grow: 1;
-  height: 200vh;
+.img-grid-tr {
+  border-top-right-radius: 14px;
 }
 
-.entry {
-  width: 60%;
-  height: 100vh;
-  position: sticky;
-  top: 0;
+.img-grid-br {
+  border-bottom-right-radius: 14px;
 }
-.details div {
-  padding-top: .625rem;
-}
-.details div label {
-  font-weight: 800;
-}
-
-.entry div label{
-  text-transform: capitalize;
-  font-weight: 800;
-}
-
-.reserve-box {
-  box-shadow: 0 8px 50px #ccc;
-}
-
 
 @media screen and (max-width: 1024px) {
   .img-grid {
