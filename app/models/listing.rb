@@ -7,4 +7,19 @@ class Listing < ApplicationRecord
   has_many_attached :photos
 
   validates :listing_name, :listing_address, :listing_amenities, presence: true
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name_and_description,
+    against: %i[ listing_name listing_description ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
+  pg_search_scope :search_by_address,
+    against: [ :listing_address ],
+    using: {
+      tsearch: { prefix: true }
+    }
+
 end
