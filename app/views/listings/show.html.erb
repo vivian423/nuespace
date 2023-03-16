@@ -16,42 +16,54 @@
       <% end %>
     <% end %>
   </div>
+    <% if @listing.reviews.length > 0 %>
+      <div class="mt-3"></div>
+        <h3>Reviews:</h3>
+          <ul class="list-unstyled mt-4">
+            <% @listing.reviews.each do |review| %>
+              <li>
+                <div class="card mb-3 p-3">
+                  <p>From: <%= review.user.first_name %></p>
+                  <p>Comment: <%= review.comment %></p>
+                  <p>Rating: <%= review.rating %></p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+    <% end %>
+    </div>
+</div>
 
-  <div class="d-flex">
-    <div class="flex-grow-1 py-3 me-5">
+<div class="d-flex container gap-3">
+  <div class="details">
+    <div>
+      <label>Description:</label>
       <p><%= @listing.listing_description %></p>
-      <p>Location: <%= @listing.listing_address %></p>
-      <p>Available Amenities: <%= @listing.listing_amenities %></p>
     </div>
     <div>
-      <%= link_to "Make a booking now!", new_listing_booking_path(@listing), class: "btn btn-primary me-3"%>
+      <label>Location:</label>
+      <p><%= @listing.listing_address %></p>
+    </div>
+    <div>
+      <label>Available Amenities:</label>
+      <p><%= @listing.listing_amenities %></p>
     </div>
   </div>
 
-
-  <div class="d-flex">
-    <% if policy(@listing).edit? %>
-      <%= link_to "Edit listing", edit_listing_path(@listing), class: "btn btn-outline-success me-3" %>
-    <% end %>
-    <% if policy(@listing).destroy? %>
-      <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: "btn btn-outline-success me-3" %>
-    <% end %>
+  <div class="entry">
+    <form action="">
+      <div class="form-group">
+        <label for="checkin">check-in:</label>
+        <input type="date" id="checkin" name="checkin" class="form-control"/>
+        <small id="emailHelp" class="form-text text-muted">Date of Arrival</small>
+      </div>
+      <div class="form-group">
+        <label for="end">check-out:</label>
+        <input type="date" id="checkout" name="checkout" class="form-control"/>
+        <small id="emailHelp" class="form-text text-muted">Date of Departure</small>
+      </div>
+      <br/>
+      <button type="submit" class="btn btn-primary">Reserve!</button>
+    </form>
   </div>
-
-  <% if @listing.reviews.length > 0 %>
-    <div class="mt-3"></div>
-      <h3>Reviews:</h3>
-        <ul class="list-unstyled mt-4">
-          <% @listing.reviews.each do |review| %>
-            <li>
-              <div class="card mb-3 p-3">
-                <p>From: <%= review.user.first_name %></p>
-                <p>Comment: <%= review.comment %></p>
-                <p>Rating: <%= review.rating %></p>
-              </div>
-            </li>
-          <% end %>
-        </ul>
-    </div>
-  <% end %>
 </div>
