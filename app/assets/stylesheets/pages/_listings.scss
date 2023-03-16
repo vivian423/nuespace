@@ -2,3 +2,15 @@
   padding-top: .625rem;
   border-width: 5px;
 }
+
+.container-card{
+  display: flex;
+
+}
+.row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 16px;
+  flex-grow: 1;
+  grid-gap: 16px;
+}
