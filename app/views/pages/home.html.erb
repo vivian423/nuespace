@@ -3,11 +3,19 @@
     <div class="form-container">
       <h1>Find the perfect space for your event.</h1>
       <form action="">
-        <label for="">Search by location:</label>
-        <input type="text">
-        <label for="">Prefered dates:</label>
-        <input type="text">
-        <input type="submit">
+        <div class="form-group">
+          <label for="">Search by location:</label>
+          <input type="text" class="form-control"/>
+          <small id="searchHelp" class="form-text text-muted">Enter the location, which you like!</small>
+        </div>
+        <div class="form-group">
+          <label for="start">Start date:</label> <!-- Use calendar -->
+          <input type="date" id="start" name="trip-start"
+                  value="2023-03-22"
+                  min="2023-01-01" max="2023-12-31">
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
   </div>
