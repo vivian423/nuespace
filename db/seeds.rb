@@ -120,7 +120,7 @@ file24 = URI.open("https://thumbs.dreamstime.com/b/interiors-fashion-themed-insp
 
 fifth_seed = Listing.new(
   listing_name: 'DelhiSpice',
-  listing_address: ' 4925 BETHESDA AVE, BETHESDA, MD 20814, US',
+  listing_address: ' 4925 BETHESDA AVE, US',
   listing_amenities: 'Wi-Fi, Live Music ',
   listing_description: 'India has always been known as a land of spices and Asia’s largest spice market is in Delhi. We try to bring diverse flavors of Delhi to you through the spices used to create our signature dishes.Hand-crafted Decor -A mix of styles and colors.'
 )
