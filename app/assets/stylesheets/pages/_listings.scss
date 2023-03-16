@@ -5,12 +5,22 @@
 
 .container-card{
   display: flex;
+  gap: 10px;
 
 }
-.row{
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+
+.row-listings {
+  width: 60% !important;
+  grid-gap: 10px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 16px;
-  flex-grow: 1;
-  grid-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin: 10px;
+  margin-top: 0;
 }
