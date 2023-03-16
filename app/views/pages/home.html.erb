@@ -2,21 +2,43 @@
   <div class="search-container">
     <div class="form-container">
       <h1>Find the perfect space for your event.</h1>
-      <form action="">
-        <div class="form-group">
+        <%# <div class="form-group">
           <label for="">Search by location:</label>
           <input type="text" class="form-control"/>
           <small id="searchHelp" class="form-text text-muted">Enter the location, which you like!</small>
+        </div> %>
+        <div>
+          <%= form_with url: listings_path, method: :get do %>
+          <%= text_field_tag :name,
+            params[:name],
+            class: "form-control mb-3",
+            placeholder: "Search by name"
+          %>
+          <%= text_field_tag :address,
+            params[:address],
+            class: "form-control mb-3",
+            placeholder: "Choose a location"
+          %>
+          <div class="d-flex">
+            <%= date_field_tag :start_date,
+              params[:start_date],
+              class: "form-control me-3 mb-3",
+              placeholder: "From when.."
+            %>
+            <%= date_field_tag :end_date,
+              params[:end_date],
+              class: "form-control mb-3",
+              placeholder: "..to when"
+            %>
+            <%= date_field_tag :amenities,
+              params[:amenities],
+              class: "form-control mb-3",
+              placeholder: "..to when"
+            %>
+          </div>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <% end %>
         </div>
-        <div class="form-group">
-          <label for="start">Start date:</label> <!-- Use calendar -->
-          <input type="date" id="start" name="trip-start"
-                  value="2023-03-22"
-                  min="2023-01-01" max="2023-12-31">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
     </div>
   </div>
   <div class="img-container">
