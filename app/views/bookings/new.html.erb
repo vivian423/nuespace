@@ -1,9 +1,9 @@
 <div class="container">
 <h1 class="py-3">Make your booking for <%= @listing.listing_name %></h1>
-<%= simple_form_for([@listing, @booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.button :submit, class: "btn btn-outline-success"%>
+<%= simple_form_for [@listing, @booking], data: { controller: 'flatpickr' } do |f| %>
+  <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startTime", action: "change->flatpickr#flatPickrChange" } } %>
+  <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endTime", action: "change->flatpickr#flatPickrChange" } } %>
+  <%= f.button :submit, "Reserve listing", class: "btn btn-outline-success"%>
 <% end %>
 
 </div>

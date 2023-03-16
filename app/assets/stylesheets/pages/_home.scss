@@ -33,3 +33,56 @@
   border-radius: 12px;
   background-position: center;
 }
+
+
+.mapboxgl-ctrl-geocoder.mapboxgl-ctrl {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0E0000;
+  background-color: #F4F4F4;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 2px;
+}
+
+.mapboxgl-ctrl-geocoder--input {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  background-color: transparent;
+  border: none;
+}
+
+.mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-search, .mapboxgl-ctrl-geocoder--button, .mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-loading, .mapboxgl-ctrl-geocoder--icon.mapboxgl-ctrl-geocoder--icon-close {
+  display: none;
+}
+
+.mapboxgl-ctrl-geocoder--button {
+  height: 0px;
+}
+
+.suggestions {
+  padding-top: 10px;
+  list-style: none;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #0E0000;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion {
+  display: flex;
+}
+
+.mapboxgl-ctrl-geocoder--suggestion-title {
+  display: none;
+}
+
+.mapboxgl-ctrl-geocoder--powered-by > a {
+  display: none;
+}

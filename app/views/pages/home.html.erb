@@ -1,7 +1,7 @@
 <div class="hero-container">
   <div class="search-container">
     <div class="form-container">
-      <h1>Find the perfect space for your event.</h1>
+      <h1 class="mb-4 mt-3">Find the perfect space for your event.</h1>
         <%# <div class="form-group">
           <label for="">Search by location:</label>
           <input type="text" class="form-control"/>
@@ -14,19 +14,26 @@
             class: "form-control mb-3",
             placeholder: "Search by name.."
           %>
-          <%= text_field_tag :address,
-            params[:address],
-            class: "form-control mb-3",
-            placeholder: "Choose a location.."
-          %>
+          <div data-controller="address-autocomplete" data-address-autocomplete-api-value="pk.eyJ1Ijoidml2aWFuNDIzIiwiYSI6ImNsZWlsNnlodjAyZzg0MXFydzZxMngyMTcifQ.jowFYH6bhXzsBYvwJbRNXw" class="mb-3">
+            <%= text_field_tag :address,
+              params[:address], data: {address_autocomplete_target: "address"},
+              class: "d-none",
+              placeholder: "Choose a location.."
+            %>
+          </div>
           <div class="d-flex">
+          <%# data-controller='flatpickr'  %>
             <%= date_field_tag :start_date,
               params[:start_date],
+              input_html: { data: { flatpickr_target: "startTime",
+              action: "change->flatpickr#flatPickrChange" } },
               class: "form-control me-3 mb-3",
               placeholder: "From when.."
             %>
             <%= date_field_tag :end_date,
               params[:end_date],
+              input_html: { data: { flatpickr_target: "endTime",
+              action: "change->flatpickr#flatPickrChange" } },
               class: "form-control mb-3",
               placeholder: "..to when"
             %>
@@ -37,7 +44,9 @@
                 placeholder: "Choose amenities.."
               %>
           </div>
-          <%= submit_tag "Search", class: "btn btn-primary" %>
+          <div class="d-flex mt-3"></div>
+          <%= submit_tag "Find a space", class: "btn btn-primary" %>
+          <%= link_to "See all spaces", listings_path, class: ["btn btn-primary", "ms-3"] %>
           <% end %>
         </div>
     </div>
