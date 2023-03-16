@@ -5,7 +5,7 @@
 
 .container-card{
   display: flex;
-  gap: 10px;
+
 
 }
 
@@ -21,6 +21,8 @@
   grid-gap: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  margin: 10px;
+  margin: 15px;
   margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
