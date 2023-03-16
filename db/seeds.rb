@@ -96,7 +96,7 @@ file19 = URI.open("https://thumbs.dreamstime.com/b/glass-beers-local-pub-low-ang
 
 fourth_seed = Listing.new(
   listing_name: ' Worlds End',
-  listing_address: '174 Camden High St, Camden Town',
+  listing_address: 'Gran Via del Marqués del Túria, 69, 46005 Valencia, Spain',
   listing_amenities: 'Wi-Fi, Live Music',
   listing_description: 'The Worlds End is a landmark pub in Camden Town and is known throughout the UK for its rock music-loving customers.The Londons largest pub over the years.')
 # main picture
@@ -120,8 +120,8 @@ file24 = URI.open("https://thumbs.dreamstime.com/b/interiors-fashion-themed-insp
 
 fifth_seed = Listing.new(
   listing_name: 'DelhiSpice',
-  listing_address: ' 4925 BETHESDA AVE, US',
-  listing_amenities: 'Wi-Fi, Live Music ',
+  listing_address: 'Auguststraße 58, 10119 Berlin, Germany',
+  listing_amenities: 'Wi-Fi, Live Music',
   listing_description: 'India has always been known as a land of spices and Asia’s largest spice market is in Delhi. We try to bring diverse flavors of Delhi to you through the spices used to create our signature dishes.Hand-crafted Decor -A mix of styles and colors.'
 )
 # main picture
