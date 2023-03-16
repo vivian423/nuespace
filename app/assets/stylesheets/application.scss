@@ -11,6 +11,10 @@
 @import "components/index";
 @import "pages/index";
 
+// Date-picker JS lib
+@import 'flatpickr/dist/flatpickr.css';
+
+
 h1, h2, h3 {
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -19,12 +23,3 @@ body{
   min-height: 100vh;
   flex-direction: column;
 }
-// a {
-//   text-decoration: none;
-//   color: black;
-// }
-// a:hover {
-//   text-decoration: none;
-//   color: black;
-
-// }

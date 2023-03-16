@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @listings = Listing.all
-    # raise
   end
 
   def dashboard

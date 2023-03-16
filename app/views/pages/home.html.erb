@@ -12,12 +12,12 @@
           <%= text_field_tag :name,
             params[:name],
             class: "form-control mb-3",
-            placeholder: "Search by name"
+            placeholder: "Search by name.."
           %>
           <%= text_field_tag :address,
             params[:address],
             class: "form-control mb-3",
-            placeholder: "Choose a location"
+            placeholder: "Choose a location.."
           %>
           <div class="d-flex">
             <%= date_field_tag :start_date,
@@ -30,11 +30,12 @@
               class: "form-control mb-3",
               placeholder: "..to when"
             %>
-            <%= date_field_tag :amenities,
-              params[:amenities],
-              class: "form-control mb-3",
-              placeholder: "..to when"
-            %>
+            <%# select_tag :amenities,
+              <%= options_for_select
+                [['Coffee', 1], ['Couch', 2], ])
+                class: "form-control mb-3",
+                placeholder: "Choose amenities.."
+              %>
           </div>
           <%= submit_tag "Search", class: "btn btn-primary" %>
           <% end %>
