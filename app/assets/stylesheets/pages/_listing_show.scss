@@ -25,6 +25,36 @@
   grid-row: span 2;
 }
 
+.details {
+  background-color: #ededed;
+  border-radius: .3125rem;
+  flex-grow: 1;
+  height: 200vh;
+}
+
+.entry {
+  width: 60%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+}
+.details div {
+  padding-top: .625rem;
+}
+.details div label {
+  font-weight: 800;
+}
+
+.entry div label{
+  text-transform: capitalize;
+  font-weight: 800;
+}
+
+.reserve-box {
+  box-shadow: 0 8px 50px #ccc;
+}
+
+
 @media screen and (max-width: 1024px) {
   .img-grid {
     --num-cols: 2;
