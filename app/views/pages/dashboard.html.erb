@@ -7,13 +7,12 @@
       <% @bookings.each do |b| %>
         <div class="col-sm-12">
           <div class="card-booking">
-            <% if b.listing.photo.key %>
+       <% if b.listing.photo.key %>
               <%= cl_image_tag b.listing.photo.key %>
             <% end %>
             <div class="card-booking-infos">
               <h2><%= link_to b.listing.listing_name, listing_path(b.listing) %></h2>
-              <p><strong>Booking start date: </strong> <%= b.start_date %></p>
-              <p class = "pb-2" ><strong>booking end date: </strong> <%= b.end_date %></p>
+              <p><strong>Booking date: </strong> <%= b.start_date.strftime("%b %d, %Y") %> to <%= b.end_date.strftime("%b %d, %Y") %></p>
               <%= link_to "Create a review", new_booking_review_path(b), class: "btn btn-outline-info btn-sm" %>
             </div>
           </div>
