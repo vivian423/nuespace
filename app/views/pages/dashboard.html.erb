@@ -1,5 +1,5 @@
 <div data-controller="tab">
-  <div class="container p-3">
+  <div class="container pt-5">
     <ul class="list-inline tabs-underlined">
       <li>
         <a href="#" class="tab-underlined" id="booking" data-tab-target="tab_booking" data-action="click->tab#display_bookings">My bookings</a>
@@ -10,15 +10,15 @@
       <li>
         <a href="#" class="tab-underlined" id="received_listing" data-tab-target="tab_received_listing" data-action="click->tab#display_received_listings">Received bookings</a>
       </li>
-      <li class = "button">
-        <%= link_to "Create a new listing", new_listing_path, class: "btn btn-outline-success btn-sm mb-3"%>
+      <li class = "button hide-info">
+        <%= link_to "Create a new listing", new_listing_path, class: "btn btn-outline-dark btn-sm mb-3"%>
       </li>
     </ul>
 
   </div>
 
 
-  <div class="container p-3 hide-info"
+  <div class="container p-3"
     data-tab-target="booking">
     <% if @bookings.empty? %>
       <p class = "empty-note" ><em>You currently have no bookings</em></p>
@@ -84,4 +84,4 @@
       </div>
     <% end %>
   </div>
-<div>
+</div>
