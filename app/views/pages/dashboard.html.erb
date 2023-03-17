@@ -1,4 +1,4 @@
-<div data-controller="tab">
+<div data-controller="tab" class ="good-size-footer">
   <div class="container p-3">
     <ul class="list-inline tabs-underlined">
       <li>
@@ -27,8 +27,7 @@
         <% @bookings.each do |b| %>
           <div class="col-sm-12 mb-3">
             <div class="card-booking">
-              <div id="card-booking-bg-img" style="background-image: url(<%= cl_image_path b.listing.photo.key %>);">
-              </div>
+              <div id="card-booking-bg-img" style="background-image: url(<%= cl_image_path b.listing.photo.key %>);"></div>
               <div class="card-booking-infos">
                 <h2><%= link_to b.listing.listing_name, listing_path(b.listing) %></h2>
                 <p><strong>Booking date: </strong> <%= b.start_date.strftime("%b %d, %Y") %> to <%= b.end_date.strftime("%b %d, %Y") %></p>
@@ -84,4 +83,4 @@
       </div>
     <% end %>
   </div>
-<div>
+</div>
