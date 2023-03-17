@@ -2,12 +2,14 @@
 <h1 class="py-3">Create a new listing!</h1>
 
 <%= simple_form_for(@listing) do |f| %>
-    <%= f.input :listing_name %>
-    <%= f.input :listing_address %>
-    <%= f.input :listing_description %>
-    <%= f.input :listing_amenities %>
+    <%= f.input :listing_name, label: 'Name of listing' %>
+    <%= f.input :listing_address, label: 'Address of listing' %>
+    <%= f.input :listing_description, label: 'Tell us a little bit about the space' %>
+    <%= f.input :listing_hours, label: 'Hours of operation' %>
+    <%= f.input :listing_price %>
+    <%= f.input :listing_amenities, label: 'Any amenities like wifi or tv display?' %>
     <%= f.input :photo, as: :file, label: 'Main photo of your listing' %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Additional photos'  %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Additional photos' %>
     <%= f.button :submit, class: "btn btn-outline-success"%>
 <% end %>
 

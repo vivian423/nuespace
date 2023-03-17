@@ -1,8 +1,8 @@
 <div class="container">
-  <h1>Create a new review</h1>
+  <h2 class ="pt-3">Create review for <%= @booking.listing.listing_name %></h2>
   <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :comment %>
-    <%= f.input :rating %>
-    <%= f.button :submit, class: "btn btn-outline-success"%>
+    <%= f.input :comment, label: 'Tell us about your experience'  %>
+    <%= f.input :rating, label: "Rate your experience out of 5" %>
+    <%= f.button :submit, class: "btn btn-outline-success" %>
 <% end %>
 </div>

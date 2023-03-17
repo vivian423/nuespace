@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container hide-info">
   <div class="d-flex">
     <h1 class="flex-grow-1 py-1">All Spaces Available</h1>
     <div class="mt-4">
@@ -20,9 +20,8 @@
           <div>
             <h2><%= link_to listing.listing_name, listing_path(listing) %></h2>
             <p><%= listing.listing_address %></p>
-            <p><%= listing.listing_amenities %></p>
           </div>
-          <h2 class="card-listing-pricing">£99.99</h2>
+          <h2 id="card-listing-pricing"> <%= listing.listing_price ? listing.listing_price : "Contact" %> </h2>
         </div>
       </div>
       <% end %>

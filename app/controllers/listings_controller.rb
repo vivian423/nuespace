@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
 
   def show
     authorize @listing
+    # @reviews_average = @listing.review.rating
   end
 
   def new
@@ -49,6 +50,7 @@ class ListingsController < ApplicationController
   end
 
   def update
+    authorize @listing
     if @listing.update(listing_params)
       redirect_to @listing, notice: "Listing was successfully edited."
     else

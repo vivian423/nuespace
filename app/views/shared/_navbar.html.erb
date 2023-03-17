@@ -16,6 +16,9 @@
       <div class="collapse navbar-collapse p-2" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto">
           <% if user_signed_in? %>
+
+
+
             <li class="nav-item active">
               <%= link_to "Search", "#", class: "nav-link" %>
             </li>
@@ -25,8 +28,11 @@
             <li class="nav-item active">
               <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
             </li>
+            <li class = "button">
+            <%= link_to "Create listing", new_listing_path, class: "btn btn-success ms-3"%>
+             </li>
             <li class="nav-item dropdown ms-3">
-              <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "https://ionicframework.com/docs/img/demos/avatar.svg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to current_user.first_name, "#", class: "dropdown-item" %>
                 <%= link_to "Account Settings", "#", class: "dropdown-item" %>
@@ -44,7 +50,7 @@
               <%= link_to "Login", new_user_session_path, class: "nav-link" %>
             </li>
             <li class="nav-item ps-2">
-              <%= link_to "Sign Up", new_user_session_path, class: "nav-link" %>
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
             </li>
           <% end %>
         </ul>

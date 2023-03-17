@@ -11,9 +11,10 @@ class ReviewsController < ApplicationController
     @booking = Booking.find(params[:booking_id])
     @review.booking = @booking
     @review.user = current_user
+    @review.booking.listing
     authorize @booking
     if @review.save
-      redirect_to dashboard_path, notice: "Review was successfully created."
+      redirect_to listing_path(@review.booking.listing), notice: "Review was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
