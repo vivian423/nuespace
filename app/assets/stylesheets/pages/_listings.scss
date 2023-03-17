@@ -26,3 +26,15 @@
   padding-left: 0;
   padding-right: 0;
 }
+
+@media(max-width: 1000px) {
+  .row-listings {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media(max-width: 800px) {
+  .row-listings {
+    grid-template-columns: 1fr;
+  }
+}
