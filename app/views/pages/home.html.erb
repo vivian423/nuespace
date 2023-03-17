@@ -9,7 +9,7 @@
         </div> %>
         <div>
           <%= form_with url: listings_path, method: :get do %>
-        
+
           <div data-controller="address-autocomplete" data-address-autocomplete-api-value="pk.eyJ1Ijoidml2aWFuNDIzIiwiYSI6ImNsZWlsNnlodjAyZzg0MXFydzZxMngyMTcifQ.jowFYH6bhXzsBYvwJbRNXw" class="mb-3">
             <%= text_field_tag :address,
               params[:address], data: {address_autocomplete_target: "address"},
