@@ -1,60 +1,87 @@
-<div class="container p-3">
-  <h2 class="py-2">My current bookings</h2>
-  <% if @bookings.empty? %>
-    <p>You currently have no bookings</p>
-  <% else %>
-    <div class="row">
-      <% @bookings.each do |b| %>
-        <div class="col-sm-12">
-          <div class="card-booking">
-       <% if b.listing.photo.key %>
-              <%= cl_image_tag b.listing.photo.key %>
-            <% end %>
-            <div class="card-booking-infos">
-              <h2><%= link_to b.listing.listing_name, listing_path(b.listing) %></h2>
-              <p><strong>Booking date: </strong> <%= b.start_date.strftime("%b %d, %Y") %> to <%= b.end_date.strftime("%b %d, %Y") %></p>
-              <%= link_to "Create a review", new_booking_review_path(b), class: "btn btn-outline-info btn-sm" %>
+<div data-controller="tab">
+  <div class="container p-3">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="#" class="tab-underlined" id="booking" data-tab-target="tab_booking" data-action="click->tab#display_bookings">My bookings</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined" id="listing" data-tab-target="tab_listing" data-action="click->tab#display_listings">My Listings</a>
+      </li>
+      <li>
+        <a href="#" class="tab-underlined" id="received_listing" data-tab-target="tab_received_listing" data-action="click->tab#display_received_listings">Received bookings</a>
+      </li>
+      <li class = "button">
+        <%= link_to "Create a new listing", new_listing_path, class: "btn btn-outline-success btn-sm mb-3"%>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <div class="container p-3 hide-info"
+    data-tab-target="booking">
+    <% if @bookings.empty? %>
+      <p class = "empty-note" ><em>You currently have no bookings</em></p>
+    <% else %>
+      <div class="row">
+        <% @bookings.each do |b| %>
+          <div class="col-sm-12 mb-3">
+            <div class="card-booking">
+              <div id="card-booking-bg-img" style="background-image: url(<%= cl_image_path b.listing.photo.key %>);">
+              </div>
+              <div class="card-booking-infos">
+                <h2><%= link_to b.listing.listing_name, listing_path(b.listing) %></h2>
+                <p><strong>Booking date: </strong> <%= b.start_date.strftime("%b %d, %Y") %> to <%= b.end_date.strftime("%b %d, %Y") %></p>
+                <%= link_to "Create a review", new_booking_review_path(b), class: "btn btn-outline-info btn-sm" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="container p-3 hide-info"
+    data-tab-target="listing">
+    <%= link_to "Create a new listing", new_listing_path, class: "btn btn-outline-success btn-sm mb-3"%>
+    <% if @listings.empty? %>
+      <p class = "empty-note" ><em>You don't have any listings yet</em></p>
+    <% else %>
+      <div class="row-dashboard w-80">
+
+        <% @listings.each do |listing| %>
+        <div class="card-listing">
+          <% if listing.photo.key %>
+            <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <div class="card-listing-infos">
+            <div>
+              <h2><%= link_to listing.listing_name, listing_path(listing) %></h2>
+              <p><%= listing.listing_address %></p>
             </div>
           </div>
         </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 
-<div class="container p-3">
-  <h2 class="py-1 ">My listings</h2>
-  <%= link_to "Create a new listing", new_listing_path, class: "btn btn-outline-success btn-sm mb-3"%>
-  <% if @listings.empty? %>
-    <p> No listings yet </p>
-  <% else %>
-    <div class="card-booking">
-      <% @received_bookings.each do |b| %>
-        <%= cl_image_tag b.listing.photo.key %>
-        <div class="card-booking-infos">
-          <h2><%= link_to b.listing.listing_name, listings_path(b) %></h2>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-
-<div class="container p-3">
-  <h2 class="py-2">Reservations made on my listings</h2>
-  <% if @received_bookings.empty? %>
-    <p> No one has booked your listings yet </p>
-  <% else %>
-    <div class="card-booking">
-      <% @received_bookings.each do |b| %>
-        <%= cl_image_tag b.listing.photo.key %>
-        <div class="card-booking-infos">
-          <h2><%= link_to b.listing.listing_name, listings_path(b) %></h2>
-          <p><strong>Booked by: </strong> <%= b.user.first_name %> <%= b.user.last_name %></p>
-          <p><strong>Contact info: </strong> <%= b.user.email %> || <%= b.user.phone_number %></p>
-          <p><strong>Booking start date: </strong> <%= b.start_date  %></p>
-          <p><strong>Booking end date: </strong> <%= b.end_date  %></p>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+  <div class="container p-3 hide-info"
+    data-tab-target="received_listing">
+    <% if @received_bookings.empty? %>
+      <p class = "empty-note" ><em> No bookings received yet </em></p>
+    <% else %>
+      <div class="card-booking">
+        <% @received_bookings.each do |b| %>
+          <div class="card-booking-infos">
+            <h2><%= link_to b.listing.listing_name, listings_path(b) %></h2>
+            <p><strong>Booked by: </strong> <%= b.user.first_name %> <%= b.user.last_name %></p>
+            <p><strong>Contact info: </strong> <%= b.user.email %> || <%= b.user.phone_number %></p>
+            <p><strong>Booking start date: </strong> <%= b.start_date  %></p>
+            <p><strong>Booking end date: </strong> <%= b.end_date  %></p>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<div>
