@@ -50,7 +50,7 @@ class ListingsController < ApplicationController
   end
 
   def update
-    raise
+    authorize @listing
     if @listing.update(listing_params)
       redirect_to @listing, notice: "Listing was successfully edited."
     else
