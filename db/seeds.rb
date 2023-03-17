@@ -104,12 +104,12 @@ file18 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/13/74/d2/22/p
 file19 = URI.open("https://media-cdn.tripadvisor.com/media/photo-w/0a/b1/d5/f2/photo1jpg.jpg")
 
 fourth_seed = Listing.new(
-  listing_name: 'Nous Chateaudun',
-  listing_address: '8 rue de Chateaudun, 75009 Paris, France',
+  listing_name: 'Restaurante Goya Gallery',
+  listing_address: 'Burriana, 3, 46005, Valencia, Spain',
   listing_price: 150,
   listing_hours: "14:00 - 22:00",
   listing_amenities: "Serves Alcohol, Reservations, Seating, Wheelchair Accessible, Wine and Beer, Accepts Mastercard, Accepts Visa, Digital Payments, Accepts Credit Cards, Table Service, Delivery, Takeout, Full Bar, Free Wifi",
-  listing_description: "Fresh food seasoned with the memories of travels and a pinch of Mediterranean. We select only the best organic products through the seasons. Everything is homemade in our kitchen and prepared everyday by our cooks with love and passion. We'll take good care of you."
+  listing_description: "Freshly made paellas seasoned with the memories of travels and a pinch of Mediterranean. We select only the best organic products through the seasons. Everything is homemade in our kitchen and prepared everyday by our cooks with love and passion. We'll take good care of you."
 )
 # main picture
 fourth_seed.photo.attach(io: file15, filename: "c.png", content_type: "image/png")
@@ -197,7 +197,7 @@ fifth_seed.photos.attach(io: file32, filename: "f2.png", content_type: "image/pn
 fifth_seed.photos.attach(io: file33, filename: "f3.png", content_type: "image/png")
 fifth_seed.photos.attach(io: file34, filename: "f4.png", content_type: "image/png")
 
-fifth_seed.user = user_four
+fifth_seed.user = user_three
 fifth_seed.save!
 
 # Listing 8
