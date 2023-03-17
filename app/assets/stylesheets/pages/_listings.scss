@@ -5,7 +5,7 @@
 
 .container-card{
   display: flex;
-  gap: 10px;
+
 
 }
 
@@ -23,6 +23,8 @@
   grid-template-columns: 1fr 1fr 1fr;
   margin: 15px;
   margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media(max-width: 1000px) {
