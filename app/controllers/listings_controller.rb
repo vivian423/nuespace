@@ -7,11 +7,11 @@ class ListingsController < ApplicationController
 
     if params[:name].present? && params[:address].present?
       @listings = @listings.search_by_name_and_description(params[:name])
-      @listings = @listings.near(params[:address], 10)
+      @listings = @listings.near(params[:address], 150)
     elsif params[:name].present?
       @listings = @listings.search_by_name_and_description(params[:name])
     elsif params[:address].present?
-      @listings = @listings.near(params[:address], 1000)
+      @listings = @listings.near(params[:address], 150)
     end
 
     @markers = @listings.geocoded.map do |listing|
