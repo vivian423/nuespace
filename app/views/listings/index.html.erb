@@ -20,7 +20,6 @@
           <div>
             <h2><%= link_to listing.listing_name, listing_path(listing) %></h2>
             <p><%= listing.listing_address %></p>
-            <p><%= listing.listing_amenities %></p>
           </div>
           <h2 id="card-listing-pricing"> <%= listing.listing_price ? listing.listing_price : "Contact" %> </h2>
         </div>
