@@ -26,6 +26,7 @@ class ListingsController < ApplicationController
 
   def show
     authorize @listing
+    # @reviews_average = @listing.review.rating
   end
 
   def new

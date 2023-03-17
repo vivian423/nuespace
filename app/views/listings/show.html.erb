@@ -3,7 +3,7 @@
     <div class="flex-grow-1">
       <h1><%= @listing.listing_name %></h1>
       <div class="d-flex">
-        <p class="card-subtitle text-muted"><%= @listing.listing_address %> ★ <%= @listing.reviews.length %> reviews </p>
+        <p class="card-subtitle text-muted"><%= @listing.listing_address %> ★ <%=pluralize(@listing.reviews.length, "review") %></p>
       </div>
     </div>
     <div class="mt-4 me-3">
@@ -43,18 +43,31 @@
           <p><%= @listing.listing_amenities %></p>
         </div>
         <div>
-          <h3 class="card-subtitle mb-2 text-muted">Host:</h3>
-          <p><%= @listing.user.listing_hours %></p>
+          <h3 class="card-subtitle mb-2 text-muted">Hours:</h3>
+          <p><%= @listing.listing_hours ? @listing.listing_hours : "Contact host" %></p>
+        </div>
+         <div>
+          <h3 class="card-subtitle mb-2 text-muted">Price:</h3>
+            <p><%= @listing.listing_price ? @listing.listing_price : "Contact host" %></p>
         </div>
         <div>
           <h3 class="card-subtitle mb-2 text-muted">Location:</h3>
           <p><%= @listing.listing_address %></p>
         </div>
       </div>
+      <div class="container">
+        <% if @listing.user == current_user %>
+        <%= link_to "Edit listing", edit_listing_path(@listing), class: "mt-2 btn btn-outline-dark" %>
+        <%= link_to "Delete listing", listing_path(@listing), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "mt-2 btn btn-outline-secondary" %>
+        <% end %>
+       </div>
+
+ <%# Need to add edit/destroy button here %>
+
 
       <% if @listing.reviews.length > 0 %>
       <div class="card p-3 mt-3">
-        <h3 class="card-subtitle">Reviews:</h3>
+        <h3 class="card-subtitle">Review(s)</h3>
           <ul class="list-unstyled list-group list-group-flush mt-4">
             <% @listing.reviews.each do |review| %>
               <li class="list-group-item">
